@@ -1,0 +1,1369 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Mi Isla, Mi Reto | Descubre Lanzarote</title>
+
+<style>
+
+/* =========================
+   COLORES Y ESTILOS GENERALES
+========================= */
+
+:root {
+    --verde-oscuro: #234b38;
+    --verde-bosque: #356448;
+    --verde: #4d8057;
+    --verde-suave: #a8c98e;
+    --fondo: #f5f7f2;
+    --claro: #e8f0e4;
+    --blanco: #ffffff;
+    --texto: #294437;
+    --gris: #64766a;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--fondo);
+    color: var(--texto);
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* =========================
+   CABECERA
+========================= */
+
+header {
+    background: var(--verde-oscuro);
+    color: white;
+    padding: 18px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 18px;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+.logo span {
+    color: var(--verde-suave);
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: var(--verde-suave);
+}
+
+/* =========================
+   PORTADA
+========================= */
+
+.hero {
+    min-height: 570px;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(20, 55, 39, 0.92),
+            rgba(20, 55, 39, 0.35)
+        ),
+        url("img/lanzarote-portada.jpg");
+
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    padding: 75px 8%;
+    color: white;
+}
+
+.hero-content {
+    max-width: 700px;
+}
+
+.hero h1 {
+    font-size: clamp(36px, 5vw, 58px);
+    line-height: 1.12;
+    margin-bottom: 22px;
+}
+
+.hero h1 span {
+    color: var(--verde-suave);
+}
+
+.hero p {
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+.autoras {
+    font-size: 14px !important;
+    color: #e0edda;
+    margin-top: 25px;
+}
+
+.boton {
+    display: inline-block;
+    padding: 14px 24px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 5px 5px 5px 0;
+    transition: 0.3s;
+    border: 2px solid transparent;
+    cursor: pointer;
+}
+
+.boton-principal {
+    background: var(--verde-suave);
+    color: var(--verde-oscuro);
+}
+
+.boton-secundario {
+    border-color: white;
+    color: white;
+}
+
+.boton:hover {
+    transform: translateY(-3px);
+    opacity: 0.88;
+}
+
+/* =========================
+   SECCIONES GENERALES
+========================= */
+
+section {
+    padding: 75px 8%;
+}
+
+.titulo {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.titulo h2 {
+    font-size: 34px;
+    color: var(--verde-oscuro);
+    margin-bottom: 12px;
+}
+
+.titulo p {
+    color: var(--gris);
+    max-width: 720px;
+    margin: auto;
+}
+
+/* =========================
+   PRESENTACIÓN
+========================= */
+
+.presentacion {
+    background: white;
+}
+
+.dos-columnas {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 45px;
+    align-items: center;
+}
+
+.texto h3 {
+    font-size: 26px;
+    color: var(--verde);
+    margin-bottom: 18px;
+}
+
+.texto p {
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+.foto {
+    width: 100%;
+    height: 340px;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+/* =========================
+   DATO DESTACADO
+========================= */
+
+.dato {
+    background: var(--verde-oscuro);
+    color: white;
+    padding: 32px;
+    border-radius: 18px;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.dato strong {
+    display: block;
+    color: var(--verde-suave);
+    font-size: 34px;
+    margin-bottom: 8px;
+}
+
+/* =========================
+   PROBLEMA Y SOLUCIÓN
+========================= */
+
+.propuesta {
+    background: var(--claro);
+}
+
+.propuesta-contenido {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+.propuesta-card {
+    background: white;
+    padding: 32px;
+    border-radius: 18px;
+    border-left: 5px solid var(--verde);
+    box-shadow: 0 5px 18px rgba(35, 75, 56, 0.06);
+}
+
+.propuesta-card h3 {
+    font-size: 23px;
+    margin-bottom: 15px;
+    color: var(--verde);
+}
+
+.propuesta-card p {
+    line-height: 1.8;
+}
+
+/* =========================
+   PÚBLICO OBJETIVO
+========================= */
+
+.publico {
+    background: var(--verde-oscuro);
+    color: white;
+}
+
+.publico .titulo h2 {
+    color: white;
+}
+
+.publico .titulo p {
+    color: #d6e5d5;
+}
+
+.publico-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.publico-card {
+    background: var(--verde-bosque);
+    padding: 28px 16px;
+    text-align: center;
+    border-radius: 16px;
+    border-bottom: 4px solid var(--verde-suave);
+}
+
+.icono {
+    font-size: 38px;
+    margin-bottom: 12px;
+}
+
+.publico-card h3 {
+    color: var(--verde-suave);
+    margin-bottom: 10px;
+}
+
+.publico-card p {
+    font-size: 14px;
+}
+
+/* =========================
+   NAVEGACIÓN
+========================= */
+
+.navegacion {
+    background: white;
+}
+
+.navegacion-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.navegacion-card {
+    background: #f0f5ed;
+    border-radius: 16px;
+    overflow: hidden;
+    text-align: center;
+    padding-bottom: 22px;
+    transition: 0.3s;
+}
+
+.navegacion-card:hover {
+    transform: translateY(-6px);
+}
+
+.navegacion-card img {
+    width: 100%;
+    height: 175px;
+    object-fit: cover;
+}
+
+.navegacion-card h3 {
+    margin: 18px 8px 10px;
+    color: var(--verde);
+}
+
+.navegacion-card p {
+    padding: 0 15px;
+    font-size: 14px;
+}
+
+/* =========================
+   CÓMO FUNCIONA
+========================= */
+
+.funcionamiento {
+    background: var(--verde-oscuro);
+    color: white;
+}
+
+.funcionamiento .titulo h2 {
+    color: white;
+}
+
+.funcionamiento .titulo p {
+    color: #d6e5d5;
+}
+
+.pasos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.paso {
+    text-align: center;
+    padding: 30px;
+    background: var(--verde-bosque);
+    border-radius: 20px;
+}
+
+.numero {
+    background: var(--verde-suave);
+    color: var(--verde-oscuro);
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    font-weight: bold;
+    margin: 0 auto 20px;
+}
+
+.paso h3 {
+    color: var(--verde-suave);
+    margin-bottom: 15px;
+    font-size: 22px;
+}
+
+/* =========================
+   RETOS
+========================= */
+
+.retos {
+    background: white;
+}
+
+.retos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.reto-card {
+    background: #f0f5ed;
+    border-radius: 18px;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.reto-card:hover {
+    transform: translateY(-5px);
+}
+
+.reto-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.reto-info {
+    padding: 25px;
+}
+
+.etiqueta {
+    display: inline-block;
+    background: #dcebd4;
+    color: var(--verde-oscuro);
+    padding: 7px 13px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+.reto-info h3 {
+    margin-bottom: 12px;
+    color: var(--verde-oscuro);
+}
+
+.reto-info p {
+    font-size: 14px;
+    margin-bottom: 18px;
+}
+
+.boton-reto {
+    background: var(--verde-oscuro);
+    color: white;
+    border: none;
+    padding: 11px 17px;
+    border-radius: 22px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.boton-reto:hover {
+    background: var(--verde);
+}
+
+.boton-reto.completado {
+    background: #dcebd4;
+    color: var(--verde-oscuro);
+}
+
+/* =========================
+   LUGARES
+========================= */
+
+.lugares {
+    background: var(--claro);
+}
+
+.lugares-contenido {
+    background: white;
+    padding: 35px;
+    border-radius: 20px;
+}
+
+.lugares-contenido h3 {
+    color: var(--verde);
+    margin-bottom: 15px;
+    font-size: 24px;
+}
+
+.lugares-contenido p {
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+.lugares-lista {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.lugar-item {
+    background: #f0f5ed;
+    border-radius: 12px;
+    padding: 18px;
+}
+
+.lugar-item strong {
+    color: var(--verde);
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* =========================
+   PROGRESO
+========================= */
+
+.progreso {
+    background: white;
+}
+
+.progreso-caja {
+    max-width: 750px;
+    margin: auto;
+    background: var(--verde-oscuro);
+    color: white;
+    border-radius: 20px;
+    padding: 40px;
+    text-align: center;
+}
+
+.progreso-caja h3 {
+    color: var(--verde-suave);
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+
+.progreso-caja p {
+    margin-bottom: 15px;
+}
+
+.barra {
+    width: 100%;
+    height: 17px;
+    background: #637c6c;
+    border-radius: 20px;
+    overflow: hidden;
+    margin: 22px 0;
+}
+
+.barra-interior {
+    width: 0%;
+    height: 100%;
+    background: var(--verde-suave);
+    transition: width 0.4s ease;
+}
+
+#texto-progreso {
+    font-weight: bold;
+    color: var(--verde-suave);
+}
+
+/* =========================
+   LLAMADA FINAL
+========================= */
+
+.final {
+    background:
+        linear-gradient(
+            rgba(25, 65, 43, 0.88),
+            rgba(25, 65, 43, 0.88)
+        ),
+        url("img/lanzarote-final.jpg");
+
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    color: white;
+    padding: 100px 8%;
+}
+
+.final h2 {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.final h2 span {
+    color: var(--verde-suave);
+}
+
+.final p {
+    font-size: 18px;
+    max-width: 750px;
+    margin: 0 auto 25px;
+}
+
+/* =========================
+   PIE DE PÁGINA
+========================= */
+
+footer {
+    background: #173629;
+    color: white;
+    padding: 38px 8%;
+    text-align: center;
+}
+
+footer h2 {
+    color: var(--verde-suave);
+    margin-bottom: 12px;
+}
+
+footer p {
+    color: #d3e2d4;
+    margin-bottom: 7px;
+    font-size: 14px;
+}
+
+/* =========================
+   MÓVILES Y TABLETAS
+========================= */
+
+@media (max-width: 850px) {
+
+    header {
+        justify-content: center;
+        text-align: center;
+    }
+
+    nav {
+        justify-content: center;
+    }
+
+    .dos-columnas,
+    .propuesta-contenido {
+        grid-template-columns: 1fr;
+    }
+
+    .publico-grid,
+    .navegacion-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .pasos {
+        grid-template-columns: 1fr;
+    }
+
+    .retos-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 500px) {
+
+    section {
+        padding: 55px 6%;
+    }
+
+    .hero {
+        padding: 65px 6%;
+        min-height: 520px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .titulo h2 {
+        font-size: 27px;
+    }
+
+    .publico-grid,
+    .navegacion-grid,
+    .lugares-lista {
+        grid-template-columns: 1fr;
+    }
+
+    .final h2 {
+        font-size: 30px;
+    }
+
+    .progreso-caja {
+        padding: 28px 20px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- CABECERA -->
+
+<header>
+
+    <div class="logo">
+        Mi Isla,<br>
+        <span>Mi Reto.</span>
+    </div>
+
+    <nav>
+        <a href="#inicio">Inicio</a>
+        <a href="#retos">Retos y actividades</a>
+        <a href="#lugares">Lugares de interés</a>
+        <a href="#progreso">Mi progreso</a>
+    </nav>
+
+</header>
+
+<main>
+
+<!-- PORTADA -->
+
+<section class="hero" id="inicio">
+
+    <div class="hero-content">
+
+        <h1>
+            Mi Isla, Mi Reto:
+            <span>descubre Lanzarote</span>
+            de una forma diferente.
+        </h1>
+
+        <p>
+            Una iniciativa digital que conecta a las personas
+            con el entorno natural, la cultura y las tradiciones
+            de Lanzarote a través de experiencias, retos y
+            actividades participativas.
+        </p>
+
+        <a href="#retos" class="boton boton-principal">
+            Explorar retos →
+        </a>
+
+        <a href="#lugares" class="boton boton-secundario">
+            Descubrir Lanzarote
+        </a>
+
+        <p class="autoras">
+            Proyecto realizado por Anyara y Nairi,
+            alumnas de 4.º de ESO.
+        </p>
+
+    </div>
+
+</section>
+
+<!-- PRESENTACIÓN -->
+
+<section class="presentacion">
+
+    <div class="dos-columnas">
+
+        <div class="texto">
+
+            <h3>Una isla llena de historias por descubrir</h3>
+
+            <p>
+                Lanzarote es mucho más que sus lugares turísticos
+                más conocidos. Sus pequeños pueblos, comercios
+                familiares, paisajes y tradiciones forman parte
+                de una identidad que merece ser conocida.
+            </p>
+
+            <p>
+                Mi Isla, Mi Reto nace para dar visibilidad a esos
+                rincones especiales que muchas veces pasan
+                desapercibidos.
+            </p>
+
+            <p>
+                Queremos que residentes y visitantes descubran
+                otra forma de disfrutar la isla, apoyando lo local
+                y respetando nuestro entorno.
+            </p>
+
+        </div>
+
+        <div>
+            <img class="foto"
+                 src="img/comercio-local.jpg"
+                 alt="Pequeño comercio tradicional de Lanzarote">
+        </div>
+
+    </div>
+
+    <div class="dato">
+        <strong>1993</strong>
+        Lanzarote fue declarada Reserva de la Biosfera por la UNESCO.
+    </div>
+
+</section>
+
+<!-- PROBLEMA Y SOLUCIÓN -->
+
+<section class="propuesta">
+
+    <div class="titulo">
+        <h2>¿Por qué nace Mi Isla, Mi Reto?</h2>
+        <p>
+            Un proyecto para conocer, valorar y cuidar nuestra isla.
+        </p>
+    </div>
+
+    <div class="propuesta-contenido">
+
+        <div class="propuesta-card">
+
+            <h3>¿Qué necesidad queremos resolver?</h3>
+
+            <p>
+                En ocasiones, las personas desconocen parte de
+                la riqueza natural, cultural y social de Lanzarote,
+                así como las diferentes formas de disfrutarla
+                de manera responsable.
+            </p>
+
+        </div>
+
+        <div class="propuesta-card">
+
+            <h3>Nuestra propuesta</h3>
+
+            <p>
+                Mi Isla, Mi Reto es una plataforma web que invita
+                a descubrir la isla mediante retos, rutas y
+                actividades relacionadas con el medioambiente,
+                el patrimonio y las tradiciones locales.
+                Su objetivo es fomentar la participación,
+                el aprendizaje y el compromiso con la
+                conservación de nuestro entorno.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- PÚBLICO OBJETIVO -->
+
+<section class="publico">
+
+    <div class="titulo">
+
+        <h2>¿A quién va dirigido?</h2>
+
+        <p>
+            Una experiencia para todas las personas que quieran
+            descubrir Lanzarote.
+        </p>
+
+    </div>
+
+    <div class="publico-grid">
+
+        <div class="publico-card">
+            <div class="icono">🏝️</div>
+            <h3>Residentes</h3>
+            <p>
+                Para redescubrir nuestra isla y valorar
+                sus rincones.
+            </p>
+        </div>
+
+        <div class="publico-card">
+            <div class="icono">🌱</div>
+            <h3>Jóvenes</h3>
+            <p>
+                Para aprender y participar en actividades
+                diferentes.
+            </p>
+        </div>
+
+        <div class="publico-card">
+            <div class="icono">👨‍👩‍👧‍👦</div>
+            <h3>Familias</h3>
+            <p>
+                Para compartir experiencias y descubrir
+                nuevos lugares.
+            </p>
+        </div>
+
+        <div class="publico-card">
+            <div class="icono">🌍</div>
+            <h3>Visitantes</h3>
+            <p>
+                Para conocer la cultura local más allá
+                de los lugares habituales.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- NAVEGACIÓN -->
+
+<section class="navegacion">
+
+    <div class="titulo">
+
+        <h2>Explora nuestra plataforma</h2>
+
+        <p>
+            Una navegación sencilla e intuitiva para
+            disfrutar de todas las experiencias.
+        </p>
+
+    </div>
+
+    <div class="navegacion-grid">
+
+        <div class="navegacion-card">
+
+            <img src="img/inicio.jpg"
+                 alt="Paisaje de Lanzarote">
+
+            <h3>🏠 Inicio</h3>
+
+            <p>
+                Presentación del proyecto y acceso
+                a los retos destacados.
+            </p>
+
+        </div>
+
+        <div class="navegacion-card">
+
+            <img src="img/tienda.jpg"
+                 alt="Pequeño comercio local">
+
+            <h3>🏆 Retos y actividades</h3>
+
+            <p>
+                Propuestas para descubrir lugares,
+                aprender y participar en iniciativas locales.
+            </p>
+
+        </div>
+
+        <div class="navegacion-card">
+
+            <img src="img/paisaje.jpg"
+                 alt="Paisaje volcánico de Lanzarote">
+
+            <h3>📍 Rutas y lugares</h3>
+
+            <p>
+                Información sobre espacios naturales,
+                pueblos y lugares culturales.
+            </p>
+
+        </div>
+
+        <div class="navegacion-card">
+
+            <img src="img/experiencias.jpg"
+                 alt="Experiencias y actividades en Lanzarote">
+
+            <h3>📊 Mi progreso</h3>
+
+            <p>
+                Seguimiento de los retos completados
+                y de los logros conseguidos.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- CÓMO FUNCIONA -->
+
+<section class="funcionamiento">
+
+    <div class="titulo">
+
+        <h2>¿Cómo funciona la plataforma?</h2>
+
+        <p>
+            Tres sencillos pasos para vivir una experiencia
+            diferente en Lanzarote.
+        </p>
+
+    </div>
+
+    <div class="pasos">
+
+        <div class="paso">
+
+            <div class="numero">1</div>
+
+            <h3>Descubre</h3>
+
+            <p>
+                Explora los retos y selecciona las actividades
+                que más te interesen.
+            </p>
+
+        </div>
+
+        <div class="paso">
+
+            <div class="numero">2</div>
+
+            <h3>Participa</h3>
+
+            <p>
+                Sigue las indicaciones de cada propuesta
+                y completa las actividades.
+            </p>
+
+        </div>
+
+        <div class="paso">
+
+            <div class="numero">3</div>
+
+            <h3>Comparte tu experiencia</h3>
+
+            <p>
+                Registra tus avances y descubre nuevas
+                formas de conocer y cuidar Lanzarote.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- RETOS -->
+
+<section class="retos" id="retos">
+
+    <div class="titulo">
+
+        <h2>Retos para descubrir Lanzarote</h2>
+
+        <p>
+            Pequeñas experiencias que pueden hacer
+            que conozcas la isla de otra manera.
+        </p>
+
+    </div>
+
+    <div class="retos-grid">
+
+        <div class="reto-card">
+
+            <img src="img/tienda.jpg"
+                 alt="Pequeño comercio de un pueblo">
+
+            <div class="reto-info">
+
+                <span class="etiqueta">Comercio local</span>
+
+                <h3>Descubre una tiendita local</h3>
+
+                <p>
+                    Visita un pequeño comercio de un pueblo,
+                    conoce sus productos y descubre
+                    las historias que hay detrás.
+                </p>
+
+                <button class="boton-reto" data-reto="0">
+                    Marcar como completado
+                </button>
+
+            </div>
+
+        </div>
+
+        <div class="reto-card">
+
+            <img src="img/paisaje.jpg"
+                 alt="Paisaje volcánico de Lanzarote">
+
+            <div class="reto-info">
+
+                <span class="etiqueta">Naturaleza</span>
+
+                <h3>Conoce un paisaje volcánico</h3>
+
+                <p>
+                    Descubre la belleza del paisaje de Lanzarote
+                    y aprende a respetar sus espacios naturales.
+                </p>
+
+                <button class="boton-reto" data-reto="1">
+                    Marcar como completado
+                </button>
+
+            </div>
+
+        </div>
+
+        <div class="reto-card">
+
+            <img src="img/artesania.jpg"
+                 alt="Artesanía y tradiciones de Lanzarote">
+
+            <div class="reto-info">
+
+                <span class="etiqueta">Cultura</span>
+
+                <h3>Descubre las tradiciones</h3>
+
+                <p>
+                    Conoce las costumbres, la artesanía,
+                    la arquitectura y la identidad cultural
+                    de los pueblos de Lanzarote.
+                </p>
+
+                <button class="boton-reto" data-reto="2">
+                    Marcar como completado
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- LUGARES DE INTERÉS -->
+
+<section class="lugares" id="lugares">
+
+    <div class="titulo">
+
+        <h2>Los rincones que hacen especial nuestra isla</h2>
+
+        <p>
+            Lanzarote tiene mucho más por descubrir.
+        </p>
+
+    </div>
+
+    <div class="lugares-contenido">
+
+        <h3>Mucho más allá de los lugares conocidos</h3>
+
+        <p>
+            Queremos dar protagonismo a los pequeños pueblos,
+            sus comercios familiares, talleres artesanales,
+            mercados, rincones naturales y espacios culturales.
+        </p>
+
+        <p>
+            Nuestro objetivo es que las personas puedan conocer
+            lugares que normalmente no aparecen en las rutas
+            turísticas habituales y descubrir el valor de
+            las personas que mantienen viva la identidad
+            de Lanzarote.
+        </p>
+
+        <p>
+            Cada pequeño comercio y cada rincón tienen
+            una historia que merece ser conocida.
+        </p>
+
+        <div class="lugares-lista">
+
+            <div class="lugar-item">
+                <strong>🏘️ Pueblos</strong>
+                Descubrir sus calles, historias y arquitectura.
+            </div>
+
+            <div class="lugar-item">
+                <strong>🛍️ Comercio local</strong>
+                Conocer pequeñas tiendas y productos de la isla.
+            </div>
+
+            <div class="lugar-item">
+                <strong>🎨 Artesanía</strong>
+                Valorar los trabajos y las tradiciones artesanales.
+            </div>
+
+            <div class="lugar-item">
+                <strong>🌋 Naturaleza</strong>
+                Aprender a respetar los paisajes y espacios naturales.
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- MI PROGRESO -->
+
+<section class="progreso" id="progreso">
+
+    <div class="titulo">
+
+        <h2>Mi progreso</h2>
+
+        <p>
+            Cada experiencia cuenta. Descubre cuánto
+            has conseguido conocer de nuestra isla.
+        </p>
+
+    </div>
+
+    <div class="progreso-caja">
+
+        <h3>¡Sigue descubriendo Lanzarote!</h3>
+
+        <p>
+            Marca los retos como completados y observa
+            cómo avanza tu progreso.
+        </p>
+
+        <div class="barra">
+            <div class="barra-interior" id="barra-progreso"></div>
+        </div>
+
+        <p id="texto-progreso">
+            0 de 3 retos completados
+        </p>
+
+        <p>
+            ¡Cada pequeño paso cuenta!
+        </p>
+
+    </div>
+
+</section>
+
+<!-- LLAMADA FINAL -->
+
+<section class="final">
+
+    <h2>
+        ¿Preparado para
+        <span>descubrir Lanzarote?</span>
+    </h2>
+
+    <p>
+        Explora nuevos lugares, supera retos y forma parte
+        de una comunidad comprometida con el futuro
+        de nuestra isla.
+    </p>
+
+    <a href="#retos" class="boton boton-principal">
+        Explorar retos →
+    </a>
+
+    <a href="#lugares" class="boton boton-secundario">
+        Descubrir Lanzarote
+    </a>
+
+</section>
+
+</main>
+
+<!-- PIE DE PÁGINA -->
+
+<footer>
+
+    <h2>Mi Isla, Mi Reto</h2>
+
+    <p>Conoce. Cuida. Disfruta.</p>
+
+    <p>
+        Una iniciativa para descubrir,
+        cuidar y disfrutar Lanzarote.
+    </p>
+
+    <p>
+        Proyecto realizado por Anyara y Nairi · 4.º de ESO
+    </p>
+
+    <p>
+        © 2026 Mi Isla, Mi Reto.
+    </p>
+
+</footer>
+
+<!-- FUNCIONAMIENTO DE LOS RETOS -->
+
+<script>
+
+const botonesRetos = document.querySelectorAll(".boton-reto");
+const barra = document.getElementById("barra-progreso");
+const textoProgreso = document.getElementById("texto-progreso");
+
+let retosCompletados = JSON.parse(
+    localStorage.getItem("retosLanzarote") || "[false,false,false]"
+);
+
+function actualizarProgreso() {
+
+    const total = botonesRetos.length;
+
+    const completados = retosCompletados.filter(Boolean).length;
+
+    const porcentaje = (completados / total) * 100;
+
+    barra.style.width = porcentaje + "%";
+
+    textoProgreso.textContent =
+        completados + " de " + total + " retos completados";
+
+    botonesRetos.forEach((boton, indice) => {
+
+        if (retosCompletados[indice]) {
+
+            boton.textContent = "✓ Reto completado";
+
+            boton.classList.add("completado");
+
+        } else {
+
+            boton.textContent = "Marcar como completado";
+
+            boton.classList.remove("completado");
+
+        }
+
+    });
+
+    localStorage.setItem(
+        "retosLanzarote",
+        JSON.stringify(retosCompletados)
+    );
+}
+
+botonesRetos.forEach((boton, indice) => {
+
+    boton.addEventListener("click", () => {
+
+        retosCompletados[indice] = !retosCompletados[indice];
+
+        actualizarProgreso();
+
+    });
+
+});
+
+actualizarProgreso();
+
+</script>
+
+</body>
+</html>
